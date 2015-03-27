@@ -25,16 +25,16 @@ angular.module('capitolwatchApp')
       socket.unsyncUpdates('thing');
     });
 
-    $scope.items = [];
-    $scope.getItems = function() {
-
-        $http({method : 'GET',url : 'https://www.govtrack.us/api/v2/role?current=true', headers: { 'X-Parse-Application-Id':'XXX', 'X-Parse-REST-API-Key':'YYY'}})
-            .success(function(data, status) {
-                $scope.items = data;
-                console.log(data);
-            })
-            .error(function(data, status) {
-                alert("Error");
-            });
-    };
+    $scope.members = [];
+    $http.jsonp('http://www.govtrack.us/api/v2/role?current=true&limit=600&format=jsonp', {
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    })
+      .success(function (data) {
+        for (var i = 0; i < data.objects.length; i++) {
+          var member = data.objects[i];
+          $scope.members.push(member);
+        }
+     });
   });
