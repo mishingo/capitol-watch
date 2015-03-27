@@ -24,4 +24,17 @@ angular.module('capitolwatchApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.items = [];
+    $scope.getItems = function() {
+
+        $http({method : 'GET',url : 'https://www.govtrack.us/api/v2/role?current=true', headers: { 'X-Parse-Application-Id':'XXX', 'X-Parse-REST-API-Key':'YYY'}})
+            .success(function(data, status) {
+                $scope.items = data;
+                console.log(data);
+            })
+            .error(function(data, status) {
+                alert("Error");
+            });
+    };
   });

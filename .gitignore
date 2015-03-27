@@ -7,3 +7,5 @@ demo
 release.txt
 fixtures/bower.json
 fixtures/package.json
+.sass-cache
+.tmp/
