@@ -1,0 +1,59 @@
+.navbar{
+	padding: 10px 0px;
+	color: #fff;
+	.container{
+		.brand{
+			@include breakpoint($mobile) {
+				@include span(12 of 12 last);
+				font-size: 0.8em;
+				text-align: center;
+			}
+			@include breakpoint($laptop) {
+				@include span(4 of 12);
+			}
+			a{
+				h1{
+					color: #37A1E7;
+					font-weight: 900;
+					display: inline-block;
+					margin: 0;
+				}
+			}
+		}
+		
+		.nav-links{
+			@include breakpoint($mobile) {
+				@include span(12 of 12 last);
+			}
+			@include breakpoint($laptop) {
+				@include span(6 of 12 last);
+			}
+			display: table;
+			table-layout: fixed;
+			ul{
+				display: table-row;
+				margin: 0;
+				padding: 0;
+				li{
+					list-style: none;
+					display: table-cell;
+					text-align: center;
+					font-weight: 600;
+					padding: 15px;
+					a{
+						display: block;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.logo{
+	background: url("../assets/images/capitol.png") no-repeat;
+	height: 68px;
+	width: 49px;
+	display: inline-block;
+	padding:0px 28px;
+}
