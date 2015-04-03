@@ -41,9 +41,6 @@ html {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   font-size: 16px;
   -webkit-font-smoothing: antialiased !important;
-}
-
-html{
   @include border-box-sizing;
 }
 
@@ -58,6 +55,18 @@ body {
 
 a:hover{
   color: #6B99FF;
+}
+
+.media-container {
+  @include span(6 of 12);
+}
+
+.bills {
+  @include span(6 of 12);
+}
+
+footer {
+  @include span(12 of 12);
 }
 // Component styles are injected through grunt
 // injector

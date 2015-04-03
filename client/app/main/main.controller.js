@@ -24,20 +24,7 @@ angular.module('capitolwatchApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
-/*
-    $scope.members = [];
-    $http.jsonp('http://www.govtrack.us/api/v2/role?current=true&limit=600&format=jsonp', {
-      params: {
-        callback: 'JSON_CALLBACK'
-      }
-    })
-      .success(function (data) {
-        for (var i = 0; i < data.objects.length; i++) {
-          var member = data.objects[i];
-          $scope.members.push(member);
-        }
-     });
-*/
+
     $scope.glocation = [];
       if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
@@ -48,5 +35,20 @@ angular.module('capitolwatchApp')
             });
         });
       }
+
+    var userState = "FL";
+
+    $scope.members = [];
+    $http.jsonp('http://www.govtrack.us/api/v2/role?current=true&limit=600&state='+ userState +'&format=jsonp', {
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    })
+      .success(function (data) {
+        for (var i = 0; i < data.objects.length; i++) {
+          var member = data.objects[i];
+          $scope.members.push(member);
+        }
+     });
 
   });
