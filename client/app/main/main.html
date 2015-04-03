@@ -1,50 +1,41 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<div class="content">
+  <div class="container">
 
+   <!--  <div class="location">
+      {{glocation}}
+    </div> -->
 
-<div class="location">
-  <h2>{{glocation}}</h2>
-</div>
-
-
-<div class="media-container">
-  <article class="media" ng-repeat="member in members">
-    <div class="media-component">
-      <h2>{{member.person.name}}</h2>
-      <ul class="media-details">
-        <li class="media-detail media-date"><em>{{member.startdate}} - {{member.enddate}}</em></li>
-        <li class="media-detail media-link" ng-show="member.person.twitterid"><a class="media-link media-link-tw" href="http://twitter.com/{{member.person.twitterid}}" data-icon="&#x2605;" >{{member.person.twitterid}}</a></li>
-        <li class="media-detail media-link" ng-show="member.person.youtubeid"><a class="media-link media-link-yt" href="https://www.youtube.com/user/{{member.person.youtubeid}}"  data-icon="&#x25ba;">{{member.person.youtubeid}}</a></li>
-      </ul>
+    <div class="upcoming-bills">
+      <div class="ubill card-holder" ng-repeat="bill in bills">
+        <div class="card">
+          <h2>{{bill.display_number}}</h2>
+          <p>{{bill.title_without_number}}</p>
+        </div>
+      </div>
     </div>
-  </article>
-</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
+<!--<div class="media-container">
+      <article class="media" ng-repeat="member in members">
+        <div class="media-component">
+          <h2>{{member.person.name}}</h2>
+          <ul class="media-details">
+            <li class="media-detail media-date"><em>{{member.startdate}} - {{member.enddate}}</em></li>
+            <li class="media-detail media-link" ng-show="member.person.twitterid"><a class="media-link media-link-tw" href="http://twitter.com/{{member.person.twitterid}}" data-icon="&#x2605;" >{{member.person.twitterid}}</a></li>
+            <li class="media-detail media-link" ng-show="member.person.youtubeid"><a class="media-link media-link-yt" href="https://www.youtube.com/user/{{member.person.youtubeid}}"  data-icon="&#x25ba;">{{member.person.youtubeid}}</a></li>
+          </ul>
+        </div>
+      </article>
+    </div> -->
+
   </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
 </div>
 
 <footer class="footer">
   <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
+    <p>Angular Fullstack v2.0.13 |
+      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+    </div>
+  </footer>

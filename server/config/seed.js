@@ -4,9 +4,19 @@
  */
 
 'use strict';
-
+var Ubill = require('../api/ubill/ubill.model');
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+
+Thing.find({}).remove(function() {
+  Thing.create({
+    guid : 3,
+    voted : true
+  },{
+    guid : 4,
+    voted : true
+  });
+});
 
 Thing.find({}).remove(function() {
   Thing.create({
