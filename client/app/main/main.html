@@ -2,15 +2,12 @@
 
 <div class="content">
   <div class="container">
-
-   <!--  <div class="location">
-      {{glocation}}
-    </div> -->
-
+    
     <div class="upcoming-bills">
+      <h2> Upcoming Bills </h2>
       <div class="ubill card-holder" ng-repeat="bill in bills">
         <div class="card">
-          <h2>{{bill.display_number}}</h2>
+          <h3>{{bill.display_number}}</h3>
           <p>{{bill.title_without_number}}</p>
         </div>
       </div>
@@ -32,10 +29,4 @@
   </div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-    <p>Angular Fullstack v2.0.13 |
-      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-    </div>
-  </footer>
+
