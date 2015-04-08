@@ -33,22 +33,6 @@ angular.module('capitolwatchApp')
       }
     })
       .success(function (data) {
-        $http.post('/api/votess', {
-          userid: Auth.getCurrentUser()._id,
-          vote:[
-            {
-              bill_id: "39dj09",
-              vote_stance: "rock"
-            }
-          ]
-        }).
-          success(function(data, status, headers, config) {
-            console.log("post to votess worked");
-            console.log(Auth.getCurrentUser()._id);
-          }).
-          error(function(data, status, headers, config) {
-            console.log("sorry post to api votess didnt work");
-          });
         for (var i = 0; i < data.objects.length; i++) {
           var member = data.objects[i];
           $scope.members.push(member);
@@ -64,6 +48,24 @@ angular.module('capitolwatchApp')
       }
     })
       .success(function (data) {
+        $http.get('/api/user_votes/ui/' + Auth.getCurrentUser()._id).success(function(data) {
+          console.log('/api/user_votes/ui/' + Auth.getCurrentUser()._id);
+          console.log(data);
+        });
+
+        /*$http.post('/api/user_votes', {
+          userid: Auth.getCurrentUser()._id,
+          billid: '234',
+          stance: 'yea'
+        }).
+          success(function(data, status, headers, config) {
+            console.log("post to user_votes worked");
+            console.log(Auth.getCurrentUser()._id);
+          }).
+          error(function(data, status, headers, config) {
+            console.log("sorry post to api user_votes didnt work");
+          });*/
+
         for (var i = 0; i < data.objects.length; i++) {
           var bill = data.objects[i];
           $scope.bills.push(bill);
