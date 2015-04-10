@@ -104,6 +104,20 @@ angular.module('capitolwatchApp')
       }
     });
 
+  $scope.votes = [];
+  $http.jsonp('https://congress.api.sunlightfoundation.com/votes?fields=question,roll_id,bill_id,result,breakdown.total&apikey=4e6a01514540472cb4440d9541dc0b15', {
+    params: {
+      callback: 'JSON_CALLBACK'
+    }
+  })
+  .success(function (data) {
+      for (var i = 0; i < data.results.length; i++) {
+          var vote = data.results[i];
+          $scope.votes.push(vote);
+      }
+  });
+
+
 /******************************************************************/
 
  

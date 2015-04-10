@@ -14,12 +14,39 @@
       </div>
     </div>
 
+    <div class="recent-votes">
+      <h2> Voting Results Feed </h2>
+      <div class="votewrapper" ng-repeat="vote in votes">
+        <div class="vote">
+          <h3>{{vote.result}}</h3>
+          <h3>{{vote.bill_id}}</h3>
+          <p>{{vote.question}}</p>
+          <p>Yea {{vote.breakdown.total.Yea}}</p>
+          <p>Nay {{vote.breakdown.total.Nay}}</p>
+        </div>
+      </div>
+    </div>
+
     <div class="members">
       <h2> Your Leaders </h2>
       <div class="member-card card-holder" ng-repeat="member in members">
         <div class="card">
-          <h3>{{member.first_name}} {{member.last_name}}</h3>
-          <p></p>
+          <div class="memberwrapper">
+            <div class="memberimage">
+              <img src="https://theunitedstates.io/images/congress/225x275/{{member.bioguide_id}}.jpg" />
+            </div> 
+          </div>
+            <div class="memberinfo">
+              <h3>{{member.first_name}} {{member.last_name}}</h3>
+              <ul>
+                <li>State: {{member.state_name}}</li>
+                <li>Party: {{member.party}}</li>
+                <li><a href="{{member.website}}" target="_blank">{{member.website}}</a></li>
+                <li><a href="http://www.youtube.com/{{member.youtube_id}}" target="_blank">http://www.youtube.com/{{member.youtube_id}}</a></li>
+                <li><a href="http://www.facebook.com/{{member.facebook_id}}" target="_blank">http://www.facebook.com/{{member.facebook_id}}</a></li>
+                <li><a href="{{member.contact_form}}" target="_blank">Contact Form</a></li>
+              </ul>
+            </div>
         </div>
       </div>
     </div>
