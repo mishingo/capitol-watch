@@ -14,7 +14,7 @@
     border-top: 1px solid #E5E5E5;
 }
 
-.upcoming-bills{
+.upcoming-bills, .members {
     @include breakpoint($mobile) {
         @include span(12 of 12 last);
     }
@@ -32,7 +32,7 @@
         font-weight: 500;
         color: #949494;
     }
-    .ubill{
+    .ubill, .member-card {
           padding: 5px 0px;
         .card{
             background-color: #F2F2F2;
