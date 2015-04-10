@@ -5,6 +5,10 @@ angular.module('capitolwatchApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },
+    {
+      'title': 'Bills',
+      'link': '/bills'
     }];
 
     $scope.isCollapsed = true;

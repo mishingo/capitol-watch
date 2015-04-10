@@ -3,8 +3,51 @@
 
 angular.module('capitolwatchApp')
   .controller('MainCtrl', function ($scope, $http, socket, Auth) {
-    $scope.awesomeThings = [];
 
+    $scope.bills = [];
+    $http.jsonp('https://www.govtrack.us/api/v2/bill?order_by=-introduced_date&format=jsonp&limit=5', {
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    })
+      .success(function (data) {
+        $http.get('/api/user_votes/ui/' + Auth.getCurrentUser()._id).success(function(user_votedata) {
+          console.log('/api/user_votes/ui/' + Auth.getCurrentUser()._id);
+          console.log(user_votedata);
+          for (var i = 0; i < data.objects.length; i++) {
+            var bill_id = data.objects[i].id;
+            console.log(bill_id);
+          }
+        }).
+          error(function(data, status, headers, config) {
+            console.log("sorry post to api user_votes didnt work");
+          });
+
+        /*$http.post('/api/user_votes', {
+          userid: Auth.getCurrentUser()._id,
+          billid: '234',
+          stance: 'yea'
+        }).
+          success(function(data, status, headers, config) {
+            console.log("post to user_votes worked");
+            console.log(Auth.getCurrentUser()._id);
+          }).
+          error(function(data, status, headers, config) {
+            console.log("sorry post to api user_votes didnt work");
+          });*/
+
+        for (var i = 0; i < data.objects.length; i++) {
+          var bill = data.objects[i];
+          $scope.bills.push(bill);
+          console.log($scope.bills);
+        }
+     });
+    
+    $scope.votebill = function(){
+
+    };
+  /******************************************************************/  
+    $scope.awesomeThings = [];
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
@@ -40,41 +83,12 @@ angular.module('capitolwatchApp')
         }
      });
 
+/******************************************************************/
 
-    $scope.bills = [];
-    $http.jsonp('https://www.govtrack.us/api/v2/bill?order_by=-introduced_date&format=jsonp&limit=5', {
-      params: {
-        callback: 'JSON_CALLBACK'
-      }
-    })
-      .success(function (data) {
-        $http.get('/api/user_votes/ui/' + Auth.getCurrentUser()._id).success(function(data) {
-          console.log('/api/user_votes/ui/' + Auth.getCurrentUser()._id);
-          console.log(data);
-        });
-
-        /*$http.post('/api/user_votes', {
-          userid: Auth.getCurrentUser()._id,
-          billid: '234',
-          stance: 'yea'
-        }).
-          success(function(data, status, headers, config) {
-            console.log("post to user_votes worked");
-            console.log(Auth.getCurrentUser()._id);
-          }).
-          error(function(data, status, headers, config) {
-            console.log("sorry post to api user_votes didnt work");
-          });*/
-
-        for (var i = 0; i < data.objects.length; i++) {
-          var bill = data.objects[i];
-          $scope.bills.push(bill);
-          console.log($scope.bills);
-        }
-     });
+ 
 
     
-
+/******************************************************************/
     $scope.glocation = [];
       if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
