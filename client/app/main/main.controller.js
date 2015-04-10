@@ -4,6 +4,10 @@
 angular.module('capitolwatchApp')
   .controller('MainCtrl', function ($scope, $http, socket, Auth) {
 
+
+    /*$scope.awesomeThings = []; */
+
+
     $scope.bills = [];
     $http.jsonp('https://www.govtrack.us/api/v2/bill?order_by=-introduced_date&format=jsonp&limit=5', {
       params: {
@@ -23,7 +27,7 @@ angular.module('capitolwatchApp')
             console.log("sorry post to api user_votes didnt work");
           });
 
-        /*$http.post('/api/user_votes', {
+        $http.post('/api/user_votes', {
           userid: Auth.getCurrentUser()._id,
           billid: '234',
           stance: 'yea'
@@ -34,18 +38,17 @@ angular.module('capitolwatchApp')
           }).
           error(function(data, status, headers, config) {
             console.log("sorry post to api user_votes didnt work");
-          });*/
+          });
 
-        for (var i = 0; i < data.objects.length; i++) {
+       for (var i = 0; i < data.objects.length; i++) {
           var bill = data.objects[i];
           $scope.bills.push(bill);
           console.log($scope.bills);
         }
-     });
+      });
+     
     
-    $scope.votebill = function(){
 
-    };
   /******************************************************************/  
     $scope.awesomeThings = [];
     $http.get('/api/things').success(function(awesomeThings) {
@@ -69,26 +72,6 @@ angular.module('capitolwatchApp')
       socket.unsyncUpdates('thing');
     });
 
-    $scope.members = [];
-    $http.jsonp('http://www.govtrack.us/api/v2/role?current=true&limit=600&format=jsonp', {
-      params: {
-        callback: 'JSON_CALLBACK'
-      }
-    })
-      .success(function (data) {
-        for (var i = 0; i < data.objects.length; i++) {
-          var member = data.objects[i];
-          $scope.members.push(member);
-          //console.log($scope.members);
-        }
-     });
-
-/******************************************************************/
-
- 
-
-    
-/******************************************************************/
     $scope.glocation = [];
       if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(function(position){
@@ -99,5 +82,44 @@ angular.module('capitolwatchApp')
             });
         });
       }
+
+    var latt = 42.96;
+    var longg = -108.09;
+
+    //Sunlight congress call
+    var slc = 'https://congress.api.sunlightfoundation.com';
+    var slckey = '4e6a01514540472cb4440d9541dc0b15';
+
+    $scope.members = [];
+    $http.jsonp('https://congress.api.sunlightfoundation.com/legislators/locate?latitude=' + latt + '&longitude=' + longg + '&apikey=4e6a01514540472cb4440d9541dc0b15&format=jsonp', {
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    })
+    .success(function (data) {
+      for (var i = 0; i < data.results.length; i++) {
+          var member = data.results[i];
+          $scope.members.push(member);
+          //console.log($scope.members);
+      }
+    });
+
+/******************************************************************/
+
+ 
+
+
+    
+/******************************************************************/
+    /*$scope.glocation = [];
+      if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+            var latt = position.coords.latitude;
+            var longg = position.coords.longitude;
+            $scope.$apply(function() {
+                $scope.glocation.push(latt, longg);
+            });
+        });
+      }*/
 
   });
