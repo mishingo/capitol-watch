@@ -12,10 +12,13 @@ angular.module('capitolwatchApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
+          party: $scope.user.party,
+          zip: $scope.user.zip,
           password: $scope.user.password
         })
         .then( function() {
           // Account created, redirect to home
+          console.log(form);
           $location.path('/');
         })
         .catch( function(err) {

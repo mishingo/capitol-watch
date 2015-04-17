@@ -58,6 +58,6 @@ angular.module('capitolwatchApp', [
   $(function() {
     $('#m-menu').click(function() {
       $('.nav-links').fadeToggle();
-      console.log("click");
+      console.log('click');
     });
   });

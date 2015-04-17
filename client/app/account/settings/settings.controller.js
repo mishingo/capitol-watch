@@ -3,6 +3,10 @@
 angular.module('capitolwatchApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
+    $scope.isCollapsed = true;
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser;
 
     $scope.changePassword = function(form) {
       $scope.submitted = true;
