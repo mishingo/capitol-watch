@@ -1,5 +1,10 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="col-md-12">
-This is JUST the bill view.
+<div class="content">
+  	<div class="container bill">
+		<!-- This is JUST the bill view {{abill[0].committees[0].id}} -->
+		
+			<div ng-include="'components/billstowatch/billstowatch.html'"></div>
+		
+	</div>
 </div>

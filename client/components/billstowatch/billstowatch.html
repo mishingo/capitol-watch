@@ -1,0 +1,12 @@
+<div class="billstowatch" ng-controller="billstowatchCtrl">
+      <h4> Bills to Watch: </h4>
+      <div class="watchcard" ng-repeat="bill in bills">
+        <div class="watchcard-content">
+          <h3>{{bill.display_number}}</h3>
+          <p>{{bill.title_without_number}}</p>
+        </div>
+        <div class="watchcard-action">
+          <a href="/bills/{{bill.id}}">Vote</a>
+        </div>
+      </div>
+</div>

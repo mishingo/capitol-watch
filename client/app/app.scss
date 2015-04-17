@@ -31,6 +31,18 @@
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
 
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: ""; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
 $susy: (
   columns: 12,
   container: 1120px,
@@ -59,12 +71,18 @@ body {
 a:hover{
   color: #6B99FF;
 }
+
+.content{
+    background-color: #F5F5F5;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'bills/bills.scss';
 @import 'main/main.scss';
+@import 'billstowatch/billstowatch.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
 // endinjector
