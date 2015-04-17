@@ -24,4 +24,5 @@ angular.module('capitolwatchApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
   });

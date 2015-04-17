@@ -15,5 +15,9 @@ angular.module('capitolwatchApp')
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsCtrl',
         authenticate: true
+      })
+      .when('/profile', {
+        templateUrl: 'app/account/profile/profile.html',
+        controller: 'ProfileCtrl'
       });
   });

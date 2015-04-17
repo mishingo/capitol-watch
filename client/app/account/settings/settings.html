@@ -31,11 +31,6 @@
         </div>
 
         <p class="help-block"> {{ message }} </p>
-        <ul>
-          <li ng-show="isLoggedIn()"><p>Hello {{ getCurrentUser().name }}</p> </li>
-          <li ng-show="isLoggedIn()"><p>Your zip code is {{ getCurrentUser().zip }}</p> </li>
-          <li ng-show="isLoggedIn()"><p>Your party affiliation is {{ getCurrentUser().party }}</p> </li>
-        </ul>
         <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
       </form>
     </div>

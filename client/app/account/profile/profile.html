@@ -1,0 +1,31 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="profile">
+  <div class="container profile_info">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>{{ getCurrentUser().name }}</h1>
+        <img gravatar-src="'{{ getCurrentUser().email }}'" gravatar-size="100">
+      </div>
+          <ul>
+            <li> Email address: {{ getCurrentUser().email }} </li>
+            <li ng-show="isLoggedIn()"><p>Your zip code is {{ getCurrentUser().zip }}</p> </li>
+            <li ng-show="isLoggedIn()"><p>Your party affiliation is {{ getCurrentUser().party }}</p> </li>
+          </ul>
+      <div class="pastvotes_profile">
+        <h1>Past Votes</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="upcoming-bills">
+    <h2> Upcoming Bills </h2>
+    <div class="ubill card-holder" ng-repeat="bill in bills">
+      <div class="card">
+        <h3>{{bill.display_number}}</h3>
+        <p>{{bill.title_without_number}}</p>
+        <a href="/bills/{{bill.id}}">Vote for {{bill.id}}</a>
+      </div>
+    </div>
+  </div>
+</div>
