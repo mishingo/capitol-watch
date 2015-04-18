@@ -46,5 +46,20 @@ angular.module('capitolwatchApp')
           console.log($scope.bills);
         }
       });
-  });
+
+
+  $scope.uservotes = [];
+    $http.jsonp('/api/user_votes/ui/' + Auth.getCurrentUser()._id, {
+      params: {
+        callback: 'JSON_CALLBACK'
+      }
+    })
+    .success(function(data, status, headers, config) {
+      for (var i = 0; i < data.objects.length; i++) {
+          var uservote = data.objects[i];
+          $scope.uservotes.push(uservote);
+          console.log($scope.uservotes);
+      }
+    })
+});
 
