@@ -10,7 +10,7 @@
 /**
  * App-wide Styles
  */
- @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic);
+ @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic);
  $font-family-base: 'Lato', sans-serif;
 
  $mobile: 320px;
@@ -52,6 +52,7 @@ $susy: (
 html {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   font-size: 16px;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased !important;
 }
 
@@ -67,7 +68,10 @@ body {
 	@include container();
   padding: 0px 15px;
 }
-
+a{
+  color: #0045B0;
+    text-decoration: none;
+}
 a:hover{
   color: #6B99FF;
 }
@@ -76,12 +80,118 @@ a:hover{
     background-color: #F5F5F5;
 }
 
+.row{
+  @include clearfix();
+}
+
+.card{
+  background: #FFFFFF;
+  margin-bottom: 10px;
+  .title{
+    padding: 8px 11px;
+    @include clearfix();
+    a{
+      float: right;
+      text-decoration: none;
+      font-weight: 900;
+      color: #ffffff;
+      background-color: #507ECE;
+      border-radius: 50px;
+      padding: 5px 20px;
+    }
+    h3{
+      margin: 0;
+      font-size: 1em;
+      //color: #5E5E5E;
+      font-weight: 500;
+    }
+  }
+  .content{
+      padding: 5px 13px;
+      border-bottom: 1px solid #cecece;
+    h4{
+      margin: 0;
+      font-size: .8em;
+      //color: #5E5E5E;
+      font-weight: 900;
+    }
+    p{
+      font-size: .85em;
+      //color: #585858;
+      font-weight: 500;
+      margin:0;
+      padding-top: 6px;
+    }
+  }
+}
+
+.six{
+  @include span(6 of 12);
+}
+.six-last{
+  @include span(6 of 12 last);
+}
+
+
+.grey1{
+  background-color: #E9E9E9;
+}
+.light-blue1{
+  background-color:#CCDCE9;
+}
+.mini-card{
+  padding: 8px 11px;
+  @include clearfix();
+  .img{
+    @include span(3 of 10);
+    .thumb{
+      height: 70px;
+      width: 70px;
+      border: 2px solid #fff;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      background-size:cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.50);
+    }
+  }
+  .details{
+    @include span(7 of 10 last);
+    background-color: #F5F5F5;
+    padding: 5px;
+    h4{
+      margin: 0;
+      font-size: .92em;
+    }
+    h5{
+      margin: 0;
+      font-size: .8em;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        text-align: -webkit-left;
+        list-style-type: none;
+        margin: 0;
+        padding: 3px 8px;
+        font-size: .8em;
+      }
+    }
+  }
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'bills/bills.scss';
 @import 'main/main.scss';
+@import 'billsheet/billsheet.scss';
 @import 'billstowatch/billstowatch.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';

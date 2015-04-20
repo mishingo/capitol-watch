@@ -5,10 +5,10 @@ angular.module('capitolwatchApp')
     $routeProvider
       .when('/bills', {
         templateUrl: 'app/bills/bills.html',
-        controller: 'BillsCtrl'
+        controller: 'billsCtrl'
       })
       .when('/bills/:id', {
       	templateUrl: 'app/bills/bill.html',
-        controller: 'BillCtrl'
+        controller: 'billCtrl'
       });
   });

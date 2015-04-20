@@ -1,5 +1,5 @@
 .billstowatch{
-	@include span(3 of 12);
+	@include span(3 of 13);
 	h4{
 		font-size: 0.7em;
 		color: #696969;
@@ -12,6 +12,10 @@
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.50);
 	border-radius: 1px;
 	margin-bottom: 10px;
+}
+
+.watchcard-content{
+	padding: 12px 20px;
 	h3{
 		margin: 0;
 		font-size: 1.2em;
@@ -24,10 +28,6 @@
 		color: #585858;
 		font-weight: 500;
 	}
-}
-
-.watchcard-content{
-	padding: 12px 20px;
 }
 
 .watchcard-action{

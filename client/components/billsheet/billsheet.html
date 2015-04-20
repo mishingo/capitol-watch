@@ -1,0 +1,80 @@
+<div class="billsheet" ng-controller="billsheetCtrl">
+  <div class="row sheet-head">
+    <div class="congress-type">
+      <h3> <span class="i-text"> From the</span> {{bill_type}} </h3>
+    </div>
+    <div class="introduced-date">
+      Introduced: {{introduced}}
+    </div>
+  </div>
+  <div class="row sheet-body">
+    <div class="row">
+      <div class="congress">
+        {{congress}}th Congress
+      </div>
+      <div class="bill_number">
+        {{bill_number}}
+      </div>
+    </div>
+    <div class="row bs-well">
+      <div class="bill_title">
+        <p>{{bill_title}}</p>
+      </div>
+    </div>
+    <div class="row bs-well">
+      <div class="card six">
+        <div class="title light-blue1">
+          <h3> Bill Status: {{current_status}} </h3>
+        </div>
+        <div class="content">
+          <h4> {{current_status_date}}</h4>
+          <p>{{current_status_desc}}</p>
+        </div>
+      </div>
+      <div class="card six-last">
+        <div class="title light-blue1">
+          <h3> Major Actions </h3>
+        </div>
+        <div class="content" ng-repeat="majoraction in majoractions">
+          <p>{{majoraction}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row bs-well">
+      <div class="bill_sponsors">
+        <div class="sponsor">
+          <h3> Bill Sponsor </h3>
+          <div class="mini-card grey1">
+            <div class="img">
+              <div class="thumb" style="background-image:url('https://theunitedstates.io/images/congress/225x275/{{sponsor_bioguide}}.jpg') ">
+              </div>
+            </div>
+            <div class="details">
+              <h4> {{sponsor_name}} </h4>
+              <h5>{{sponsor_start}} - {{sponsor_end}} </h5>
+              <hr />
+              <ul>
+                <li> {{sponsor_description}} </li>
+                <li> Ph: {{sponsor_phone}} </li>
+                <li> <a href="{{sponsor_website}}">{{sponsor_website}}</a> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="cosponsor">
+          
+        </div>
+      </div>
+      <div class="committees">
+        <div class="card">
+          <div class="title grey1">
+            <h3> Committees </h3>
+          </div>
+          <div class="content" ng-repeat="committee in committees">
+            <p>{{committee.name}}</p>
+          </div>
+        </div>
+      </div><!-- -->
+    </div>
+  </div>
+</div>

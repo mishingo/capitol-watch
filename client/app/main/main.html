@@ -3,16 +3,7 @@
 <div class="content">
   <div class="container">
     
-    <div class="upcoming-bills">
-      <h2> Upcoming Bills </h2>
-      <div class="ubill card-holder" ng-repeat="bill in bills">
-        <div class="card">
-          <h3>{{bill.display_number}}</h3>
-          <p>{{bill.title_without_number}}</p>
-          <a href="/bills/{{bill.id}}">Vote for {{bill.id}}</a>
-        </div>
-      </div>
-    </div>
+    <div ng-include="'components/billstowatch/billstowatch.html'"></div>
 
     <div class="recent-votes">
       <h2> Voting Results Feed </h2>
