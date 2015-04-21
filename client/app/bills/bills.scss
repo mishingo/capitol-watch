@@ -1,0 +1,19 @@
+.intro-box{
+	@include span (5 of 12 );
+	background: #FFFFFF;
+	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.50);
+	border-radius: 1px;
+	margin-top: 20px;
+}
+
+.intro-title{
+	@include span(6 of 12);
+	padding: 10px;
+	background-color: #FFE081;
+	margin-top: 20px;
+	h3{
+		color: #525252;
+		margin:0;
+		font-weight: 700;
+	}
+}

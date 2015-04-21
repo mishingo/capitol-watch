@@ -45,7 +45,7 @@
 
 $susy: (
   columns: 12,
-  container: 1120px,
+    container: 1200px,
   global-box-sizing: border-box 
 );
 
@@ -195,4 +195,5 @@ a:hover{
 @import 'billstowatch/billstowatch.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
+@import 'vote/vote.scss';
 // endinjector

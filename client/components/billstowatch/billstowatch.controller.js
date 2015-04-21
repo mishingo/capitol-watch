@@ -35,6 +35,9 @@ angular.module('capitolwatchApp')
           });*/
 
        for (var i = 0; i < data.objects.length; i++) {
+          
+          var length = 75;
+          data.objects[i].title_without_number = data.objects[i].title_without_number.substring(0, length) + "[...]";
           var bill = data.objects[i];
           $scope.bills.push(bill);
           console.log($scope.bills);

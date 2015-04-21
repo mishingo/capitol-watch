@@ -1,0 +1,18 @@
+<div class="vote" ng-controller="voteCtrl">
+  <div class="row">
+    <div class="vote-title">
+     <h3> Cast Your Vote: </h3>
+    </div>
+  </div>
+  <div class="vote-content">
+    <p> Now is your chance to play the part of a legislator, and make a decision on the future of this bill. All votes remain on this site, but if enough attention is received from our popular vote, your vote could influence congress. </p>
+    <div class="votesuccess" ng-show="votesuccess">
+      <h3> Thanks for Voting! </h3>
+    </div>
+    <div class="vote-controls bs-well" ng-hide="votecontrol">
+      <button class="yea" ng-click="voteyea()">Yea</button>
+      <button class="nay" ng-click="votenay()">Nay</button>
+      <button class="dont">Shouldn't be in Congress</button>
+    </div>
+  </div>
+</div>
