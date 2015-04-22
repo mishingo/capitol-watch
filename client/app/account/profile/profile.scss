@@ -1,0 +1,17 @@
+.profile_info {
+	@include breakpoint($mobile) {
+        @include span(12 of 12);
+    }
+    @include breakpoint($laptop) {
+        @include span(3 of 12 );
+    }
+}
+
+.profile .upcoming-bills {
+	@include breakpoint($mobile) {
+        @include span(12 of 12 last);
+    }
+    @include breakpoint($laptop) {
+        @include span(3 of 12 last);
+    }
+}

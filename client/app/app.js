@@ -1,4 +1,5 @@
 'use strict';
+var app = angular.module('app', ['ui.gravatar']);
 
 angular.module('capitolwatchApp', [
   'ngCookies',
@@ -6,7 +7,8 @@ angular.module('capitolwatchApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.gravatar',
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -58,6 +60,6 @@ angular.module('capitolwatchApp', [
   $(function() {
     $('#m-menu').click(function() {
       $('.nav-links').fadeToggle();
-      console.log("click");
+      console.log('click');
     });
   });
