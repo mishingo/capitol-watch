@@ -64,6 +64,12 @@ body {
   font-family: $font-family-base;
 }
 
+.navbar {
+  padding: 10px 0px;
+  background-color: #fff;
+  border-bottom: 7px solid #eee;
+}
+
 .container{
 	@include container();
   padding: 0px 15px;

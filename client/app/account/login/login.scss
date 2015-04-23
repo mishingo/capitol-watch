@@ -1,21 +1,55 @@
-// Colors
-// --------------------------------------------------
-/*
-$btnText:                           #fff;
-$btnTextAlt:                        #000;
+form {
+  margin: 2rem 0;
+  
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .field {
+    display: block;
+    border: 3px solid #E5E5E5;
+    float: left;
+    width: 100%;
+    
+    &.tnb {
+      border-top: 0;
+    }
 
-$btnTwitterBackground:              #2daddc;
-$btnTwitterBackgroundHighlight:     #0271bf;
-$btnGithubBackground:               #fafafa;
-$btnGithubBackgroundHighlight:      #ccc;
-
-// Social buttons
-// --------------------------------------------------
-
-.btn-twitter {
-  @include button-variant($btnText, $btnTwitterBackground, $btnTwitterBackgroundHighlight);
+    @include breakpoint($tablet) {
+      &.half {
+        width: 50%;
+      }
+      &.last {
+        border-left: 0;
+      }
+    }
+    
+    label {
+      display: block;
+      font-size: 1rem;
+      padding: 1.5rem 2rem 0;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: .5rem 2rem 1.5rem;
+      font-size: 1.2rem;
+      border: 0;
+      color: #212121;
+      outline: 0;
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize:vertical; 
+    }
+  }
 }
-.btn-github {
-  @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
-}
-*/
