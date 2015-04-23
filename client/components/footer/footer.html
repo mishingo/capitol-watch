@@ -1,0 +1,12 @@
+  <a href="/"><span class="logo"></span><h1>Capitol Watch</h1></a>
+    <ul>
+      <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+          <a ng-href="{{item.link}}">{{item.title}}</a>
+      </li>
+      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
+      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+      <li ng-show="isLoggedIn()"><p>Hello {{ getCurrentUser().name }}</p> </li>
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/profile')}"><a href="/profile">Profile</a></li>
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog">Settings</span></a></li>
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+    </ul>

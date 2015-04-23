@@ -24,6 +24,11 @@
     padding: 0.2em 0;
 }
 
+$blue: #37a1e7;
+$gold: #FFE081;
+$dark-gray: #525252;
+$green: #B8E986;
+
 @mixin img-responsive($display:block) {
   display: $display;
   width: 100% \9; // Force IE10 and below to size SVG images correctly
@@ -189,11 +194,14 @@ a:hover{
 // injector
 @import 'account/login/login.scss';
 @import 'account/profile/profile.scss';
+@import 'account/settings/settings.scss';
+@import 'account/signup/signup.scss';
 @import 'admin/admin.scss';
 @import 'bills/bills.scss';
 @import 'main/main.scss';
 @import 'billsheet/billsheet.scss';
 @import 'billstowatch/billstowatch.scss';
+@import 'footer/footer.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
 @import 'vote/vote.scss';

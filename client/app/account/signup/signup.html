@@ -1,97 +1,100 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>Sign up</h1>
-    </div>
-    <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
-
-        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
-                                            'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
-
-          <input type="text" name="name" class="form-control" ng-model="user.name"
-                 required/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
-                                            'has-error': form.email.$invalid && submitted }">
-          <label>Email</label>
-
-          <input type="email" name="email" class="form-control" ng-model="user.email"
-                 required
-                 mongoose-error/>
-          <p class="help-block" ng-show="form.email.$error.email && submitted">
-            Doesn't look like a valid email.
-          </p>
-          <p class="help-block" ng-show="form.email.$error.required && submitted">
-            What's your email address?
-          </p>
-          <p class="help-block" ng-show="form.email.$error.mongoose">
-            {{ errors.email }}
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.party.$valid && submitted,
-                                            'has-error': form.party.$invalid && submitted }">
-          <label>Party Affiliation</label>
-          <label>Democrat</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Democrat"/>
-          <label>Republican</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Republican"/>
-          <label>Independent</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Independent"/>
-          <label>I'd rather not say</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="I'd rather not say"/>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            Please select an option.
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.zip.$valid && submitted,
-                                            'has-error': form.zip.$invalid && submitted }">
-          <label>Zip Code</label>
-          <input type="number" name="zip" ng-model="user.zip" required ng-minlength="5" mongoose-error>
-          <p class="help-block" ng-show="form.name.$error.required && submitted">
-            Please provide your zip code.
-          </p>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
-                                            'has-error': form.password.$invalid && submitted }">
-          <label>Password</label>
-
-          <input type="password" name="password" class="form-control" ng-model="user.password"
-                 ng-minlength="3"
-                 required
-                 mongoose-error/>
-          <p class="help-block"
-             ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-            Password must be at least 3 characters.
-          </p>
-          <p class="help-block" ng-show="form.password.$error.mongoose">
-            {{ errors.password }}
-          </p>
-        </div>
-
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
-          </button>
-          <a class="btn btn-default btn-lg btn-register" href="/login">
-            Login
-          </a>
-        </div>
-
-        <hr>
-        <div>
-          <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
-            <i class="fa fa-twitter"></i> Connect with Twitter
-          </a>
-        </div>
-      </form>
-    </div>
+<div class="signup_wrap">
+  <div class="full-bg">
+    <img src="../../assets/images/crowd.jpg" alt="sign up for capitol watch" />
   </div>
-  <hr>
+  <div class="quote">
+    <h3>"We the people are the rightful masters of both Congress and the courts, not to overthrow the Constitution but to overthrow the men who pervert the Constitution."</h3>
+    <p class="quote_author">- Abraham Lincoln</p>
+  </div>
+
+  <div class="form-container">
+    <form class="form" name="form" ng-submit="register(form)" novalidate>
+      <h1>Sign up</h1>
+      <legend><span class="number">1</span>Your basic info</legend>
+      <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                          'has-error': form.name.$invalid && submitted }">
+        <label>Name</label>
+
+        <input type="text" name="name" class="form-control" ng-model="user.name"
+               required/>
+        <p class="help-block" ng-show="form.name.$error.required && submitted">
+          A name is required
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                          'has-error': form.email.$invalid && submitted }">
+        <label>Email</label>
+
+        <input type="email" name="email" class="form-control" ng-model="user.email"
+               required
+               mongoose-error/>
+        <p class="help-block" ng-show="form.email.$error.email && submitted">
+          Doesn't look like a valid email.
+        </p>
+        <p class="help-block" ng-show="form.email.$error.required && submitted">
+          What's your email address?
+        </p>
+        <p class="help-block" ng-show="form.email.$error.mongoose">
+          {{ errors.email }}
+        </p>
+      </div>
+
+      <legend><span class="number">2</span>Party Affiliation &amp; Zip Code</legend>
+      <div class="form-group party" ng-class="{ 'has-success': form.party.$valid && submitted,
+                                          'has-error': form.party.$invalid && submitted }">
+        <label>Democrat</label>
+        <input type="radio" name="party" class="radiobtn light" ng-model="user.party" required mongoose-error value="Democrat"/><br />
+        <label>Republican</label><input type="radio" name="party" class="radiobtn light" ng-model="user.party" required mongoose-error value="Republican"/><br />
+        <label>Independent</label><input type="radio" name="party" class="radiobtn light" ng-model="user.party" required mongoose-error value="Independent"/><br />
+        <label>I'd rather not say</label><input type="radio" name="party" class="radiobtn light" ng-model="user.party" required mongoose-error value="I'd rather not say"/><br />
+        <p class="help-block" ng-show="form.name.$error.required && submitted">
+          Please select an option.
+        </p>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-success': form.zip.$valid && submitted,
+                                          'has-error': form.zip.$invalid && submitted }">
+        <label>Zip Code</label>
+        <input type="number" name="zip" ng-model="user.zip" required ng-minlength="5" mongoose-error>
+        <p class="help-block" ng-show="form.name.$error.required && submitted">
+          Please provide your zip code.
+        </p>
+      </div>
+      <legend><span class="number">3</span>A Strong Password</legend>
+      <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                          'has-error': form.password.$invalid && submitted }">
+        <label>Password</label>
+
+        <input type="password" name="password" class="form-control" ng-model="user.password"
+               ng-minlength="3"
+               required
+               mongoose-error/>
+        <p class="help-block"
+           ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+          Password must be at least 3 characters.
+        </p>
+        <p class="help-block" ng-show="form.password.$error.mongoose">
+          {{ errors.password }}
+        </p>
+      </div>
+
+      <div>
+        <button class="btn btn-inverse btn-lg btn-login" type="submit">
+          Sign up
+        </button>
+        <span>Already have an account?</span>
+        <a class="btn btn-default btn-lg btn-register" href="/login">
+          Login
+        </a>
+      </div>
+      <div>
+        <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
+          <i class="fa fa-twitter"></i> Login with Twitter
+        </a>
+      </div>
+    </form>
+  </div>
 </div>

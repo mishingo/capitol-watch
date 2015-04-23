@@ -19,3 +19,37 @@ $btnGithubBackgroundHighlight:      #ccc;
   @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
 }
 */
+
+//USING SAME SCSS AS SIGNUP PAGE
+
+.quote_login {
+	@include span(12 of 12 last);
+	h3 {
+	  font-size: 1.4rem;
+	  color: #fff;
+	  line-height: 35px;
+	  padding: 20px 20px 0px 20px;
+	  text-align: center;
+	  margin-bottom: 0;
+	}
+	 p.quote_author {
+	  color: #fff;
+	  font-size: 1.3rem;
+	  text-align: center;
+	}
+	@include breakpoint($laptop) {
+        @include span(5 of 12);
+        h3 {
+		  font-size: 2rem;
+		  color: #fff;
+		  line-height: 45px;
+		  padding: 20px 5px 0px 100px;
+		  text-align: left;
+        }
+        p.quote_author {
+		  color: #fff;
+		  font-size: 1.6rem;
+		  text-align: right;
+		}
+    }
+}

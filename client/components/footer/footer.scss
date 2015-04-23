@@ -1,0 +1,19 @@
+.footer {
+    position:fixed;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    background-color: #fff;
+    ul {
+    	list-style-type: none;
+    }
+}
+.logo {
+	background: url("../assets/images/capitol.png") no-repeat;
+	height: 68px;
+	width: 49px;
+	display: inline-block;
+	padding:0px 28px;
+}

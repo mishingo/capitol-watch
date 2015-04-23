@@ -1,0 +1,188 @@
+.full-bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  z-index: -1;
+  img {
+	  position: absolute; 
+	  top: 0; 
+	  left: 0; 
+	  right: 0; 
+	  bottom: 0; 
+	  margin: auto; 
+	  min-width: 50%;
+	  min-height: 50%;
+  }
+}
+
+.signup_wrap {
+	padding: 8px 0;
+}
+
+.form-group.has-error {
+  font-weight: 600;
+  color: red;
+}
+
+.quote {
+	@include span(12 of 12 last);
+	h3 {
+	  font-size: 1.4rem;
+	  color: #fff;
+	  line-height: 35px;
+	  padding: 20px 20px 0px 20px;
+	  text-align: center;
+	}
+	 p.quote_author {
+	  color: #fff;
+	  font-size: 1.3rem;
+	  text-align: center;
+	}
+	@include breakpoint($laptop) {
+        @include span(5 of 12);
+        h3 {
+		  font-size: 2rem;
+		  color: #fff;
+		  line-height: 45px;
+		  padding: 100px 5px 0px 100px;
+		  text-align: left;
+        }
+        p.quote_author {
+		  color: #fff;
+		  font-size: 1.6rem;
+		  text-align: right;
+		}
+    }
+}
+
+.form-container {
+	@include span(12 of 12);
+	@include breakpoint($laptop) {
+        @include span(7 of 12 last);
+    }
+    form {
+	  max-width: 300px;
+	  margin: 30px auto;
+	  padding: 15px 40px;
+	  border-radius: 20px;
+	  background: rgba(244, 247, 248, .8);
+	  .party {
+	  	padding: 5px 0 20px 0;
+	  	input {
+			margin-right: 40px;
+			margin-left: 8px;
+	  	}
+	  	label {
+	  		display: inline-block;
+	  	}
+	  }
+	}
+
+	h1 {
+	  text-align: center;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	textarea,
+	select {
+	  background: rgba(255, 255, 255, 0.1);
+	  border: none;
+	  font-size: 1.4rem;
+	  height: auto;
+	  margin: 0;
+	  outline: 0;
+	  padding: 15px;
+	  width: 100%;
+	  background-color: #e8eeef;
+	  color: $blue;
+	  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	  margin-bottom: 30px;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+	  margin: 0 4px 8px 0;
+	}
+
+	select {
+	  padding: 6px;
+	  height: 32px;
+	  border-radius: 2px;
+	}
+
+	button {
+	  padding: 19px 39px 18px 39px;
+	  color: #fff;
+	  background-color: $blue;
+	  font-size: 1.4rem;
+	  text-align: center;
+	  font-style: normal;
+	  border-radius: 5px;
+	  width: 100%;
+	  border: none;
+	  margin-bottom: 20px;
+		-webkit-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+	  &:focus {
+	  	outline: none;
+	  }
+	  &:hover {
+
+	  	background-color: #fff;
+	  	color: $blue;
+	  }
+	}
+
+	fieldset {
+	  margin-bottom: 30px;
+	  border: none;
+	}
+
+	legend {
+	  font-size: 1.4em;
+	  margin-bottom: 10px;
+	}
+
+	label {
+	  display: block;
+	  margin-bottom: 8px;
+	}
+
+	label.light {
+	  font-weight: 300;
+	  display: inline;
+	}
+
+	.number {
+	  background-color: $blue;
+	  color: #fff;
+	  height: 30px;
+	  width: 30px;
+	  display: inline-block;
+	  font-size: 0.8em;
+	  margin-right: 4px;
+	  line-height: 30px;
+	  text-align: center;
+	  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	  border-radius: 100%;
+	}
+
+	@media screen and (min-width: 480px) {
+	  form {
+	    max-width: 550px;
+	  }
+	}
+}

@@ -1,0 +1,7 @@
+.form-container.settings {
+	padding-top: 60px;
+	@include span(12 of 12);
+	@include breakpoint($laptop) {
+        @include span(12 of 12);
+    }
+}

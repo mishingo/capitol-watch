@@ -49,14 +49,14 @@ angular.module('capitolwatchApp')
 
 
   $scope.uservotes = [];
-    $http.jsonp('/api/user_votes/ui/' + Auth.getCurrentUser()._id, {
+    $http.get('/api/user_votes/ui/' + Auth.getCurrentUser()._id, {
       params: {
         callback: 'JSON_CALLBACK'
       }
     })
     .success(function(data, status, headers, config) {
-      for (var i = 0; i < data.objects.length; i++) {
-          var uservote = data.objects[i];
+      for (var i = 0; i < data.length; i++) {
+          var uservote = data[i];
           $scope.uservotes.push(uservote);
           console.log($scope.uservotes);
       }
