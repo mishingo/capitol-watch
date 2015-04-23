@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('capitolwatchApp')
-.controller('ProfileCtrl', function ($scope, User, Auth, $http) {
+  .controller('ProfileCtrl', function ($scope, User, Auth, $http) {
+
     $scope.errors = {};
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
@@ -22,29 +23,9 @@ angular.module('capitolwatchApp')
                 var bill_id = data.objects[i].id;
             console.log(bill_id);
         }
-    }).
-        error(function(data, status, headers, config) {
-            console.log("sorry post to api user_votes didnt work");
-        });
-
-        $http.post('/api/user_votes', {
-          userid: Auth.getCurrentUser()._id,
-          billid: '234',
-          stance: 'yea'
-      }).
-        success(function(data, status, headers, config) {
-            console.log("post to user_votes worked");
-            console.log(Auth.getCurrentUser()._id);
-        }).
-        error(function(data, status, headers, config) {
-            console.log("sorry post to api user_votes didnt work");
-        });
-
-        for (var i = 0; i < data.objects.length; i++) {
-          var bill = data.objects[i];
-          $scope.bills.push(bill);
-          console.log($scope.bills);
-      }
+    })
+    .error(function(data, status, headers, config) {
+        console.log("sorry post to api user_votes didnt work");
     });
 
 
@@ -61,7 +42,7 @@ angular.module('capitolwatchApp')
             console.log($scope.uservotes);
         }
     });
-
-
 });
+});
+
 

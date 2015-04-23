@@ -1,13 +1,30 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+
 <div class="container">
   <div class="row">
-      <h1>Login</h1>
+      <!-- <h1>Login</h1>
       <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-      <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+      <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p> -->
     <div id="form-main">
       <div id="form-div">
           <form class="form" id="form1" name="form" ng-submit="login(form)" novalidate>
+
+
+<div class="signup_wrap">
+  <div class="full-bg">
+    <img src="../../assets/images/capitol.jpg" alt="Login to capitol watch" />
+  </div>
+  
+  <div class="quote_login">
+    <h3>"Every citizen of this country should be guaranteed that their vote matters, that their vote is counted, and that in the voting booth, their vote has a much weight as that of any CEO, any member of Congress, or any President."</h3>
+    <p class="quote_author">- Barbara Boxer</p>
+  </div>
+  <div class="form-container">
+      <!--<p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+      <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>-->
+          <form class="form" id="form1" name="form" ng-submit="login(form)" novalidate>
+            <h1>Login</h1>
 
             <div class="field half">
               <label for="email">Email</label>
@@ -34,6 +51,9 @@
               <button class="btn btn-inverse btn-lg btn-login" type="submit">
                 Login
               </button>
+
+              <span>Don't have an account? </span>
+
               <a class="btn btn-default btn-lg btn-register" href="/signup">
                 Register
               </a>
@@ -48,11 +68,13 @@
           </form>
         </div>
       </div>
+
     </div>
   </div>
   <hr>
 
 </div>
+
 
 
 

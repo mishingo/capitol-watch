@@ -27,3 +27,8 @@ angular.module('capitolwatchApp')
       $window.location.href = '/auth/' + provider;
     };
   });
+
+
+
+ 
+
