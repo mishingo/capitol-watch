@@ -37,6 +37,27 @@
           </p>
         </div>
 
+        <div class="form-group" ng-class="{ 'has-success': form.party.$valid && submitted,
+                                            'has-error': form.party.$invalid && submitted }">
+          <label>Party Affiliation</label>
+          <label>Democrat</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Democrat"/>
+          <label>Republican</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Republican"/>
+          <label>Independent</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="Independent"/>
+          <label>I'd rather not say</label><input type="radio" name="party" class="radiobtn" ng-model="user.party" required mongoose-error value="I'd rather not say"/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            Please select an option.
+          </p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.zip.$valid && submitted,
+                                            'has-error': form.zip.$invalid && submitted }">
+          <label>Zip Code</label>
+          <input type="number" name="zip" ng-model="user.zip" required ng-minlength="5" mongoose-error>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            Please provide your zip code.
+          </p>
+        </div>
+
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
                                             'has-error': form.password.$invalid && submitted }">
           <label>Password</label>

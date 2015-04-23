@@ -188,9 +188,11 @@ a:hover{
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
+@import 'account/profile/profile.scss';
 @import 'admin/admin.scss';
 @import 'bills/bills.scss';
 @import 'main/main.scss';
+@import 'allbills/allbills.scss';
 @import 'billsheet/billsheet.scss';
 @import 'billstowatch/billstowatch.scss';
 @import 'modal/modal.scss';

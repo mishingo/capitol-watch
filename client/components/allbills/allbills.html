@@ -1,0 +1,43 @@
+<div class="allbills bs-well" ng-controller="allbillsCtrl">
+  <div class="row">
+    <div class="search">
+      <label for="searchbills"> Search </label>
+      <input type="text" id="searchbills" name="searchbills" ng-model="keywords" ng-model-options="{debounce: 500}" ng-change="search()"> 
+    </div>
+  </div>
+  <div class="row">
+  <div class="allbills-box bs-well">
+    <div class="row">
+      <div class="title">
+      <h3 ng-hide="searching"> Most Recent Bills Introduced</h3>
+      <h3 ng-show="searching">Searching for: {{keywords}} </h3>
+      </div>
+    </div>
+    <div class="row bs-well" ng-repeat="bill in allbills">
+      <div class="bills">
+        <div class="img">
+          <div class="thumb" style="background-image:url('https://theunitedstates.io/images/congress/225x275/{{bill.sponsor.bioguideid}}.jpg') ">
+          </div>
+        </div>
+        <div class="details">
+          <div class="row header">
+            <div class="bill-title">
+              <h3><a href="/bills/{{bill.id}}">{{bill.display_number}}</a></h3>
+            </div>
+            <div class="date">
+              Introduced:{{bill.introduced_date}}
+            </div>
+          </div>
+          <hr />
+          <div class="preview row">
+            <h4>{{bill.sponsor.name}}</h4>
+            <p>{{bill.title_without_number}}</p>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
