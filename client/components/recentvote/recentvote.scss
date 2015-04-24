@@ -1,0 +1,103 @@
+.recent-votes {
+    @include span(7 of 15 );
+    h2{
+        margin: 0;
+        font-size: 1em;
+        padding: 10px 0px;
+        color: #696969;
+    }
+    .recent-activity-card{
+       @include span(12 of 12 last);
+       background: #FFFFFF;
+       box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.50);
+       border-radius: 1px;
+       margin-bottom: 20px;
+       .title{
+            padding: 9px 16px;
+            margin-top: 20px;
+            h3{
+                margin: 0;
+                font-size: 1.4em;
+                font-style: italic;
+                color: #373737;  
+            }
+       }
+       .ra-content{
+            padding: 15px;
+            h4{
+                margin:0;
+                margin: 0;
+                  font-size: 1.6em;
+                  color: #373737;
+            }
+            a{
+               color: #373737; 
+            }
+            a:hover{
+                color: #6B99FF;
+            }
+            h5{
+                    margin: 0;
+                    padding: 8px 0px;
+                }
+            .major_action{
+                background-color: #FFF9E8;
+                border: 1px solid #FFE081;
+                padding: 8px;
+                p{
+                    margin: 0;
+                }
+            }
+       }
+    }
+}
+
+.votes-holder{
+    @include clearfix();
+    padding: 15px 0px;
+}
+.vote-count-card{
+    @include span(4 of 12);
+    h5{
+        margin:0;
+        padding:10px;
+        text-align: center;
+    }
+    .vote_count{
+        @include clearfix();
+        background-color: #EFEFEF;
+            .result{
+                @include span(2 of 4); 
+                text-align: center;
+                padding: 10px;
+                border-radius: 8px;
+                h6{
+                    margin:0;
+                    font-size: 1.1em;
+                    font-weight: 500;
+                }
+                
+                p{
+                    margin:0;
+                    font-size: 1.5em;
+                    font-weight: 400;
+                }
+            }
+            .result-last{
+              @include span(2 of 4 last);
+              text-align: center;
+              h6{
+                margin:0;
+                font-size: 1.1em;
+                font-weight: 500;
+              }
+                padding: 10px;
+                border-radius: 8px;
+                p{
+                    margin:0;
+                    font-size: 1.5em;
+                    font-weight: 400;
+                } 
+            }
+    }
+}

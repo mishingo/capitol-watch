@@ -69,11 +69,7 @@ body {
   font-family: $font-family-base;
 }
 
-.navbar {
-  padding: 10px 0px;
-  background-color: #fff;
-  border-bottom: 7px solid #eee;
-}
+
 
 .container{
 	@include container();
@@ -211,5 +207,7 @@ a:hover{
 @import 'footer/footer.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
+@import 'recentvote/recentvote.scss';
+@import 'repactivity/repactivity.scss';
 @import 'vote/vote.scss';
 // endinjector

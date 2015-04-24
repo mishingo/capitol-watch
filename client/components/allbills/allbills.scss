@@ -1,5 +1,5 @@
 .allbills{
-	@include span(6 of 12);
+	@include span(7 of 12 last);
 	.search{
 		float: right;
 		padding-right: 20px;
