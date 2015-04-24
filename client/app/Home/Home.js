@@ -3,8 +3,8 @@
 angular.module('capitolwatchApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/dashboard', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+      .when('/', {
+        templateUrl: 'app/Home/Home.html',
+        controller: 'HomeCtrl'
       });
   });
