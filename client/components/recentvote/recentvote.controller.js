@@ -20,7 +20,7 @@ angular.module('capitolwatchApp')
                     var matchvote = /(\bvote\b)|(\bYea-Nay\b)|(\bYeas\b)/;
 
                     if(last_action.match(matchvote)){
-                        console.log("This action has a vote");
+                        //console.log("This action has a vote");
                         var yea = last_action.match(/(?:)[0-9]+/);
                         var nay = last_action.match(/\s-\s([0-9]+)/);
                         if(yea){
@@ -56,7 +56,7 @@ angular.module('capitolwatchApp')
                     }
 
                 $scope.votes.push(vote);
-                console.log(vote);
+                //console.log(vote);
                 
             }
         });

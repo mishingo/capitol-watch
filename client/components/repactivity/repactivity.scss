@@ -1,50 +1,122 @@
 
 .repactivity {
     @include span(5 of 15 last);
-    background-color: #FFF;
-    box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    margin: 15px 0px;
-    border-left: 5px solid #f5a623;
-    h2 {
-        padding: 10px 24px;
-        margin: 0;
-        font-size: 1.3em;
-        font-weight: 500;
-        color: #949494;
+    h2{
+      margin: 0;
+      font-size: 1em;
+      padding: 10px 0px;
+      color: #696969;  
     }
-    .member-card {
-          padding: 5px 0px;
-        .card{
-            background-color: #F2F2F2;
-            padding: 10px 25px;
+}
+.head{
+    padding: 5px 0px;
+}
+.rep-card{
+    @include clearfix();
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.50);
+    border-radius: 1px;
+    margin-bottom: 15px;
+    .img{
+        @include span(4 of 15);
+        .thumb{
+            text-align: center;
+            height: 70px;
+            width: 70px;
+            border: 2px solid #fff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            background-size:cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.50);
+            margin: 0 auto;
+        }
+    }
+    .details{
+        @include span(11 of 15 last);
+        @include clearfix();
+        padding: 7px 5px;
+        h3{
+            margin: 0;
+            font-size: 1em;
+            font-weight: 400;
+        }
+        h4{
+            margin: 0;
+            font-size: .92em;
+        }
+        h5{
+            margin: 0;
+            font-size: .8em;
+        }
+        p{
+            font-size: 0.8em;
+            padding: 4px 0px;
+            margin: 0;
+        }
+        
+    }
+    .action{
+        .title{
+            padding: 5px;
+            text-align: center;
+            background-color: #cecece;
+            h4{
+                color: #545454;
+                margin: 0;
+                font-weight: 900;
+            }
+        }
+        .outcome{
+            padding: 10px;
+             @include clearfix();
+             .vote-box{
+                @include span(3 of 12);
+                text-align: center;
+                .vote-result{
+                    background-color: #FFFA98;
+                     padding: 13px;
+                     border-radius: 9px;
+                     text-align: center;
+                }
+             }
+             .vote-box-last{
+                @include span(3 of 12 last);
+                text-align: center;
+                .vote-result{
+                    background-color: #FFFA98;
+                     padding: 13px;
+                     border-radius: 9px;
+                     text-align: center;
+                }
+             }
+            h5{
+                margin: 0;
+                padding: 5px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
             h3{
                 margin: 0;
-                font-size: 1.2em;
-                font-weight: 400;
-                padding-bottom: 7px;
-                color: #757575;
             }
             p{
                 margin: 0;
-                font-size: 0.85em;
-                font-weight: 400;
             }
         }
-        .memberwrapper {
-        }
-        .memberimage {
-          height: 105px;
-          width: 100px;
-          overflow: hidden;
-          border-radius: 50%; 
-          img {
-            max-width: 100px;
-          }
-        }
-        .memberinfo {
+        .total-result{
+            padding: 6px;
+              width: 60%;
+              text-align: center;
+              background-color: #B8CEFF;
+              margin: 0 auto;
+              margin-bottom: 8px;
+              h4{
+                margin:0;
+              }
         }
     }
 }
-
-
