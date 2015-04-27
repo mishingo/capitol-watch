@@ -8,7 +8,7 @@
         box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
     }
 
-	@include breakpoint($mobile) {
+    @include breakpoint($mobile) {
         @include span(12 of 12);
     }
     @include breakpoint($laptop) {
@@ -39,7 +39,7 @@
 }
 
 .profile .upcoming-bills {
-	@include breakpoint($mobile) {
+    @include breakpoint($mobile) {
         @include span(12 of 12 last);
     }
     @include breakpoint($laptop) {
