@@ -9,15 +9,31 @@ angular.module('capitolwatchApp')
       $http.post('/api/user_votes', {
           userid: Auth.getCurrentUser()._id,
           billid: $routeParams.id,
-          stance: 'nay'
+          stance: 'yea'
       })
         .success(function(data, status, headers, config){
-            console.log("yea boy shit got voted yea");
+            console.log("Voted Yea");
             $scope.votesuccess = true;
             $scope.votecontrol = true;
         })
         .error(function(data, status, headers, config){
-          console.log("vote didnt happen");
+          console.log("Vote failed");
+        });
+    }
+
+    $scope.votemeh = function(){
+      $http.post('/api/user_votes', {
+          userid: Auth.getCurrentUser()._id,
+          billid: $routeParams.id,
+          stance: 'Should not be in Congress!'
+      })
+        .success(function(data, status, headers, config){
+            console.log("Voted should not be in congress");
+            $scope.votesuccess = true;
+            $scope.votecontrol = true;
+        })
+        .error(function(data, status, headers, config){
+          console.log("Vote failed");
         });
     }
 
@@ -29,7 +45,7 @@ angular.module('capitolwatchApp')
           stance: 'nay'
       })
         .success(function(data, status, headers, config){
-            console.log("yea boy shit got voted nay");
+            console.log("Voted Nay");
             $scope.votesuccess = true;
             $scope.votecontrol = true;
 

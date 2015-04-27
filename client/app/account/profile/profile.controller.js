@@ -27,7 +27,7 @@ angular.module('capitolwatchApp')
             console.log("sorry post to api user_votes didnt work");
           });
 
-        $http.post('/api/user_votes', {
+        /*$http.post('/api/user_votes', {
           userid: Auth.getCurrentUser()._id,
           billid: '234',
           stance: 'yea'
@@ -38,7 +38,7 @@ angular.module('capitolwatchApp')
           }).
           error(function(data, status, headers, config) {
             console.log("sorry post to api user_votes didnt work");
-          });
+          });*/
 
        for (var i = 0; i < data.objects.length; i++) {
           var bill = data.objects[i];
