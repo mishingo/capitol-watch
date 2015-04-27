@@ -1,5 +1,6 @@
 .navbar{
 	padding: 10px;
+	background-color: #fff;
 	.container{
 		.brand{
 			@include breakpoint($mobile) {
@@ -8,7 +9,7 @@
 				text-align: center;
 			}
 			@include breakpoint($laptop) {
-				@include span(4 of 12);
+				@include span(6 of 12);
 				text-align: left;
 			}
 			a{
@@ -17,40 +18,79 @@
 					font-weight: 900;
 					display: inline-block;
 					margin: 0;
-				}
-			}
-		}
-		
-		.nav-links{
-			@include breakpoint($mobile) {
-				@include span(12 of 12 last);
-				  padding-top: 50px;
-			}
-			@include breakpoint($laptop) {
-				@include span(8 of 12 last);
-			}
-			display: table;
-			table-layout: fixed;
-			ul{
-				display: table-row;
-				margin: 0;
-				padding: 0;
-				li{
-					list-style: none;
-					display: table-cell;
-					text-align: center;
-					font-weight: 400;
-					p{
-						margin: 0;
-					}
-					a{
-						display: block;
-						text-decoration: none;
-					}
+					font-size: 2.7em;
 				}
 			}
 		}
 	}
+}
+
+.red{
+	color: #F97474;
+}
+
+.nav-links{
+		@include span(6 of 12 last);
+	    margin: 0 auto;
+	    margin-top: 32px;
+	    ul {
+	      list-style: none;
+	      margin: 0 auto;
+
+	        li {
+	          position: relative;
+	          display: inline-block;
+
+	            a {
+	            	font-size: 1.3em;
+	              display: inline-block;
+	              transition: all .5s linear;
+	              text-decoration: none;
+	              padding: 7px 25px;
+	              color: #666;
+
+	                &:hover {
+	                  background: #666;
+	                  color: #FFF;
+	                }
+	            }
+
+	          // Dropdown level 
+	          ul {
+	            display: none;
+	            background: #EEE;
+	            position: absolute;
+	            top: 100%;
+	            width: 160px;
+	            padding: 0;
+
+	              li,
+	              a {
+	                width: 100%;
+	              }
+	          }
+
+	          // on hover display child ul
+	          &:hover ul {
+	            display: block;
+	          }
+	        }
+	    }
+
+}
+
+.watch-button{
+	a{
+		color: #fff !important;
+		&:hover {
+		  font-weight: 900;
+		  background-color: #5C70E4;
+		  border-radius: 33px;
+		}
+	}
+	font-weight: 900;
+	background-color: #5C70E4;
+	border-radius: 33px;
 }
 
 .logo{
